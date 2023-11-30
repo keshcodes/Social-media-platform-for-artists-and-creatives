@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanvasConnect - Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #d8f6ff;
+      color: #ffffff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    section {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .profile-header {
+      text-align: center;
+    }
+
+    .profile-picture {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .profile-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-info p {
+      margin: 0;
+    }
+
+    .profile-stats {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: absolute;
+     bottom: 650px; /* Adjust the distance from the bottom as needed */
+     left: 50%;
+     transform: translateX(-50%);
+     text-align: center;
+    }
+
+    .stat {
+      margin: 0 10px;
+    }
+
+    .profile-posts {
+      margin-top: 20px;
+    }
+
+
+    .post {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+
+    .post img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .post p {
+      margin: 10px 0;
+    }
+
+    .edit-profile {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .edit-profile button {
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #ffdede;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>CanvasConnect</h1>
+  </header>
+
+  <nav>
+    <a href="CC.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="profile.html">Profile</a>
+    <a href="messages.html">global chat</a>
+  </nav>
+
+  <section>
+
+    <div class="profile-header">
+      <div class="profile-picture">
+        <img src="https://i.pinimg.com/550x/7c/3e/73/7c3e73a260e691c71fb2df973e93cbf2.jpg" alt="Profile Picture">
+      </div>
+          <div class="profile-stats">
+      <div class="stat">
+        <strong>Followers</strong>
+        <p>1989</p>
+      </div>
+      <div class="stat">
+        <strong>Following</strong>
+        <p>13</p>
+      </div>
+      <div class="stat">
+        <strong>Posts</strong>
+        <p>2</p>
+      </div>
+    </div>
+      <h2>@Bettyscardigan</h2>
+      <p>Betty Swift</p>
+    </div>
+
+
+    <div class="profile-info">
+      <p>i love art 🎨</p>
+         <p>18 | enfp</p>
+     <p>traditional artist</p>
+
+    </div>
+    <div class="edit-profile">
+      <button onclick="editProfile()">Edit Profile</button>
+    </div>
+
+
+    <div class="profile-posts">
+      <h3>Posts</h3>
+
+      <div class="post">
+        <img src="https://cdn.britannica.com/31/183031-050-8FAE6C2C/Artist-Jeanne-Sister-graphite-watercolour-paper-Edma-1872.jpg" alt="Artwork">
+        <p><strong>@Bettyscardigan</strong> - just completed this artwork! it turned out pretty cute and i am proud 🎨</p>
+      </div>
+
+      <div class="post">
+        <img src="https://i.pinimg.com/736x/84/e4/d9/84e4d92f9e4cce4cd15c65db5366691f.jpg" alt="Artwork">
+        <p><strong>@Bettyscardigan</strong> - creativity has no limits fr! 🚀</p>
+      </div>
+
+      <!-- Add more posts as needed -->
+
+    </div>
+
+
+
+  </section>
+
+  <footer>
+    <p>&copy; 2023 CanvasConnect. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function editProfile() {
+      alert("Editing profile functionality would be implemented here.");
+
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanvasConnect - Comments</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    section {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .post {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+
+    .post p {
+      margin: 10px 0;
+    }
+
+    .comments {
+      margin-top: 20px;
+    }
+
+    .comment {
+      margin-bottom: 10px;
+    }
+
+    .comment-user {
+      font-weight: bold;
+    }
+
+    .comment-timestamp {
+      font-size: 0.8em;
+      color: #888;
+    }
+
+    .comment-form {
+      margin-top: 20px;
+    }
+
+    .comment-form textarea {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    .comment-form button {
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>CanvasConnect</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Explore</a>
+    <a href="#">Profile</a>
+    <a href="#">Messages</a>
+  </nav>
+
+  <section>
+
+    <div class="post">
+      <p><strong>James17</strong> I am only 17 i dont know anything but ART!!!! </p>
+    </div>
+
+    <div class="comments" id="commentsContainer">
+      <!-- Comments will be displayed here -->
+    </div>
+
+    <div class="comment-form">
+      <textarea id="commentInput" placeholder="Add a comment..."></textarea>
+      <button onclick="addComment()">Post Comment</button>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2023 CanvasConnect. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function addComment() {
+      var commentInput = document.getElementById('commentInput');
+      var commentsContainer = document.getElementById('commentsContainer');
+
+      var commentText = commentInput.value.trim();
+      if (commentText === '') {
+        return;
+      }
+
+      var commentElement = document.createElement('div');
+      commentElement.classList.add('comment');
+      commentElement.innerHTML = '<p><span class="comment-user">you:</span> ' + commentText + '</p><p class="comment-timestamp">Just now</p>';
+
+      commentsContainer.appendChild(commentElement);
+      commentInput.value = '';
+    }
+  </script>
+
+</body>
+
+</html>

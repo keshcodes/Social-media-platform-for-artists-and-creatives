@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanvasConnect - Feed</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    header {
+      background-color: #d8f6ff;
+      color: #004c63;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    section {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .stories {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .story {
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+      .story img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #ffcc00; /* You can change the color of the ring */
+      margin-bottom: 5px;
+    }
+    .story p {
+      margin: 0;
+      font-size: 12px;
+    }
+    .post {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+    .post img {
+      max-width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .post p {
+      margin: 10px 0;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #000000;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+
+    footer {
+      background-color: #ffdede;
+      color: #333;
+      padding: 1em;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>CanvasConnect</h1>
+  </header>
+
+  <nav>
+    <a href="CC.html">Home</a>
+    <a href="explore.html">inspiration</a>
+    <a href="profile.html">Profile</a>
+    <a href="messages.html">global chat</a>
+    <a href="videos.html">Reel videos</a>
+  </nav>
+
+  <section>
+
+    <div class="stories">
+      <div class="story">
+        <img src="https://i.pinimg.com/550x/7c/3e/73/7c3e73a260e691c71fb2df973e93cbf2.jpg" alt="Artist 1">
+        <p>You</p>
+      </div>
+      <div class="story">
+        <img src="https://i.pinimg.com/736x/5d/9c/79/5d9c79a79cac2fe913fd92ac14a775f6.jpg" alt="Artist 2">
+        <p>James</p>
+      </div>
+      <div class="story">
+        <img src="https://qph.cf2.quoracdn.net/main-qimg-16971725dab44891b0a1b20d2548e923" alt="Artist 3">
+        <p>Augustine</p>
+      </div>
+      <div class="story">
+        <img src="https://images.squarespace-cdn.com/content/v1/56f394cf8a65e2cb64955f42/1601352252942-GW0UVOAPP9X406Q4C5F2/%40nadiiife" alt="Artist 3">
+        <p>inez</p>
+      </div>
+      <div class="story">
+        <img src="https://assets.vogue.com/photos/5f2188c6d1a2f4ce397b02af/master/w_960,c_limit/Vogue_19561201_0128_010_0138_v_resized.jpg" alt="Artist 3">
+        <p>rebekah</p>
+      </div>
+
+    
+    </div>
+
+    <div class="post">
+      <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/abstract-wine-peggy-wilson.jpg" alt="Artwork" onclick="showPopup('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/abstract-wine-peggy-wilson.jpg', 'Artist Name')">
+      <p><strong>@augustine</strong> - August slipped away like a bottle of wine! 🎨</p>
+    </div>
+
+    <div class="post">
+      <img src="https://pbs.twimg.com/media/Ed3PUF7UMAEb-g2.jpg" alt="Artwork" onclick="showPopup('https://pbs.twimg.com/media/Ed3PUF7UMAEb-g2.jpg')">
+      <p><strong>@rebekahharkness</strong> - throwback to when in a feud with my neighbour, i stole his dog and dyed it key lime green! 🚀</p>
+    </div>
+
+
+  </section>
+
+  <div class="popup" id="popup">
+    <span class="popup-close" onclick="closePopup">&times;</span>
+    <img id="popupImage" alt="Popup Image">
+  </div>
+
+
+
+  <footer>
+    <p>&copy; 2023 CanvasConnect. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showPopup(imageSrc, artistName) {
+      document.getElementById('popupImage').src = imageSrc;
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popupImage').src = imageSrc;
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+
+</html>
